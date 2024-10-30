@@ -17,6 +17,10 @@ export class MenuListComponent {
   menus = [
     { label: 'Home', route: '/' },
     { label: 'Products', route: '/products' },
-    { label: 'About Us', route: '/about' }
+    { label: 'Contact', route: '/contact'},
+    { label: 'About Us', route: '/about' },
+    { label: 'Login', route: '/auth/login'},
+    { label: 'Sign Up', route: '/auth/signup'},
+    { label: 'Logout', route: '/auth/logout'}
   ];
 }
