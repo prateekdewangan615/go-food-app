@@ -12,13 +12,10 @@
         <p>Price: {{product?.price}}</p>
         <p>Quantiy: {{product?.quantity}}</p>
         <p>Category: {{product?.category}}</p>
-        <a
-          routerLink="edit"
-          class="btn btn-primary"
-        >
+        <a routerLink="edit" class="btn btn-primary">
           Edit
         </a>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <a routerLink="delete" class="btn btn-danger">Delete</a>
 
       </div>
     </div>
