@@ -6,33 +6,47 @@
           <h1>Bring People Together with Great Food</h1>
         </div>
         <div class="mt-4">
-          <a class=" btn btn-primary ms-lg-4 mt-lg-0 mt-4 " href="/products#product-details">ProductList<i class="fas fa-angle-right ps-3"></i></a>
+          <a
+            class="btn btn-primary ms-lg-4 mt-lg-0 mt-4"
+            href="/products#product-details"
+            >ProductList<i class="fas fa-angle-right ps-3"></i
+          ></a>
         </div>
       </div>
     </div>
   </div>
 </section>
-<br> <br>
-<section id="product-details"  >
+<br />
+<br />
+<section id="product-details">
   <div class="product-details wrapper">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
           <div class="text-content text-center">
-            <h2>Explore our Food</h2>
+            <h2>Explore Food</h2>
           </div>
         </div>
       </div>
       <div class="row pt-5">
-        <div class="col-lg-4 col-md-3 mb-lg-3 mb-3" *ngFor="let card of products"  >
-          <div class="card" >
+        <div
+          class="col-lg-4 col-md-3 mb-lg-3 mb-3"
+          *ngFor="let card of products"
+        >
+          <div class="card">
             <div class="card-body">
-              <h5 class="card-title">{{card.name}}</h5>
-              <b>Price: </b>{{card.price}} <br>
-              <b>Quantity: </b>{{card.quantity}} <br>
-              <b>Category: </b>{{card.category}} <br>
+              <h5 class="card-title">{{ card.productName }}</h5>
+              <b>Price: </b>₹{{ card.productPrice }} <br />
+              <b>Quantity: </b>{{ card.productQuantity }} <br />
+              <b>Category: </b>{{ card.productCategory }} <br />
+
               <div class="text-center">
-                <a routerLink="/products/{{card.id}}" class="btn btn-primary" data-mdb-ripple-init>View Details</a>
+                <a
+                  routerLink="/products/{{ card.id }}"
+                  class="btn btn-primary"
+                  data-mdb-ripple-init
+                  >View Details</a
+                >
               </div>
             </div>
           </div>

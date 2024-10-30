@@ -1,27 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../../services/product.service';
-import { ActivatedRoute } from '@angular/router';
 
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [],
+  imports: [RouterModule, CommonModule],
   templateUrl: './product-details.component.html',
-  styles: ``
+  styles: `
+    .card-img-top {
+      width: 100%;
+      height: 15vw;
+      object-fit: cover;
+    }
+  `,
 })
-export class ProductDetailsComponent implements OnInit {
-  productId : any;
+export class ProductDetailsComponent {
   product: any;
-
-  constructor(private productService : ProductService, private route : ActivatedRoute) {
-    this.productId = this.route.snapshot.paramMap.get('productId');
-  }
-
-  ngOnInit() : void{
-    console.log()
-    this.productService.getProductById(this.productId).subscribe((response : any)=>{
-      console.log(response);
-      this.product = response;
-    });
-  }
 }

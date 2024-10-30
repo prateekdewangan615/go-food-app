@@ -23,18 +23,14 @@ import { ProductService } from '../../../services/product.service';
     }
   `,
 })
-export class ListProductsComponent implements OnInit{
-  products : any[] = [];
-  
-  constructor(private productService: ProductService){
-    console.log("inside list products constructor")
-  }
-
-  ngOnInit(): void {
-    this.productService.getProducts().subscribe((response : any)=>{
-      console.log(response);
-      this.products = response;
-    });
-    console.log("inside ng oninit")
-  }
+export class ListProductsComponent {
+  cardList =[
+    {
+      productId: '1',
+      productName : 'Veg Grilled Sandwich',
+      productPrice : 'Rs.80',
+      productQuantity: '2',
+      productCategory: 'Half'
+    },
+  ]
 }
