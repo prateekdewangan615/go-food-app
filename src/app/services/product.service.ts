@@ -1,7 +1,7 @@
 // product.service.ts
 
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  private apiUrl = 'https://localhost:8080/api/foodcards'; // Replace with the API endpoint
+  private apiUrl = 'http://localhost:8080/GoFood/api/foodcards'; // Replace with the API endpoint
 
 
   constructor(private http: HttpClient) {}
@@ -26,6 +26,7 @@ export class ProductService {
 
   // Add a new product
   addProduct(productData: any): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     console.log(productData);
     return this.http.post<any>(this.apiUrl, productData);
   }

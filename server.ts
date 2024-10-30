@@ -13,41 +13,30 @@ export function app(): express.Express {
   const browserDistFolder = resolve(serverDistFolder, '../browser');
   const indexHtml = join(serverDistFolder, 'index.server.html');
 
-
-
-
-  const cors = require('cors');
-
-  const app = express(); // Create an instance of Express
   const port = 8080;
 
-  // Middleware
-  // Use CORS middleware
-  app.use(cors({
-    origin: '*' // Allow your frontend origin
+  // Middleware: Enable CORS with custom headers and methods
+  server.use(cors({
+    origin: '*',
+    methods: ['POST', 'GET', 'OPTIONS', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type'],
+    optionsSuccessStatus: 200
   }));
 
-  app.use(express.json()); // For parsing application/json
+  // Middleware: Parse JSON payloads
+  server.use(express.json());
 
   // Define your routes here
-  app.get('/api/foodcards', (req, res) => {
-    res.send('Foodcards endpoint');
+  server.post('/api/foodcards', (req, res) => {
+    const data = req.body; // Process the JSON payload
+    res.send(`Received data: ${JSON.stringify(data)}`);
   });
-
-  // Start the server
-  app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-  });
-
-
 
   const commonEngine = new CommonEngine();
 
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
   server.get('*.*', express.static(browserDistFolder, {
     maxAge: '1y'

@@ -29,14 +29,16 @@ export class AddProductComponent implements OnInit{
 
    ngOnInit() { }
 
-  handleAddProduct() {
+   handleAddProduct() {
     if (this.addProductForm.valid) {
-      const formData = new FormData();
-      formData.append('name', this.addProductForm.value.name);
-      formData.append('quantity', this.addProductForm.value.quantity);
-      formData.append('price', this.addProductForm.value.price);
-      formData.append('category', this.addProductForm.value.category);
-
+      const formData = {
+        name: this.addProductForm.value.name,
+        quantity: this.addProductForm.value.quantity,
+        price: this.addProductForm.value.price,
+        category: this.addProductForm.value.category,
+      };
+  
+      // Directly send JSON data
       this.productService.addProduct(formData).subscribe({
         next: (response) => {
           this.isSaved = true; // Set success state
@@ -51,6 +53,7 @@ export class AddProductComponent implements OnInit{
       this.showError = true; // Show error state
     }
   }
+  
 
 }
 
