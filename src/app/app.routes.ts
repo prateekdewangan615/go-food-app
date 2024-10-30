@@ -6,6 +6,7 @@ import { AddProductComponent } from './products/components/add-product/add-produ
 import { UpdateProductComponent } from './products/components/update-product/update-product.component';
 import { ListProductsComponent } from './products/components/list-products/list-products.component';
 
+
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   {
@@ -17,5 +18,9 @@ export const routes: Routes = [
     ],
 },
   { path: 'about', component: AboutComponent},
+  { path: 'about', component: AboutComponent },
+  {path: 'auth',
+      loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
    
 ];
