@@ -1,5 +1,5 @@
-<div class="col-md-4 offset-md-4">
-  <h3>Update Employee Details</h3>
+<div class="col-md-6 offset-md-4">
+  <h3>Update Product Details</h3>
   
   <form #updateForm = "ngForm"  (ngSubmit)="updateProduct(updateForm)">
     <div class="form-group row mb-3">
@@ -63,14 +63,13 @@
           id="categoryInput"
           class="form-control"
           placeholder="Enter Category"
-          name="quantityInput"
-          [(ngModel)]="productData.quantity"
+          name="categoryInput"
+          [(ngModel)]="productData.category"
           required
         />
         <div class="invalid-feedback">Quantity is Required</div>
       </div>
     </div>
-    
     
 
     <div *ngIf="successMessage" class="alert alert-success">

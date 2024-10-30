@@ -31,7 +31,7 @@ export class UpdateProductComponent {
     this.productService.getProductById(this.productId).subscribe(product => {
       this.productData = product;
     }, error => {
-      console.error('Error fetching employee details', error);
+      console.error('Error fetching product details', error);
     });
   }
 
