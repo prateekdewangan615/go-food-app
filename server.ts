@@ -4,6 +4,7 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
+import cors from 'cors';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -11,6 +12,34 @@ export function app(): express.Express {
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');
   const indexHtml = join(serverDistFolder, 'index.server.html');
+
+
+
+
+  const cors = require('cors');
+
+  const app = express(); // Create an instance of Express
+  const port = 8080;
+
+  // Middleware
+  // Use CORS middleware
+  app.use(cors({
+    origin: '*' // Allow your frontend origin
+  }));
+
+  app.use(express.json()); // For parsing application/json
+
+  // Define your routes here
+  app.get('/api/foodcards', (req, res) => {
+    res.send('Foodcards endpoint');
+  });
+
+  // Start the server
+  app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+  });
+
+
 
   const commonEngine = new CommonEngine();
 

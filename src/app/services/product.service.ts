@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = 'https://localhost:9082/api/foodcards'; // Replace with the API endpoint
+  private apiUrl = 'https://localhost:8080/api/foodcards';
 
   constructor(private http: HttpClient) {}
 
@@ -24,6 +24,7 @@ export class ProductService {
 
   // Add a new product
   addProduct(productData: any): Observable<any> {
+    console.log(productData);
     return this.http.post<any>(this.apiUrl, productData);
   }
 
