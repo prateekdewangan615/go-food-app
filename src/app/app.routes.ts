@@ -10,10 +10,10 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'products', children: [
-        { path: '', component: ListProductsComponent},
-        { path: 'add', component: AddProductComponent},
-        { path: ':productId', component: ProductDetailsComponent }, 
-        { path: ':productId/edit', component: UpdateProductComponent},            
+        { path: '', component: ListProductsComponent, title: 'Home'},
+        { path: 'add', component: AddProductComponent, title: 'Add Products'},
+        { path: ':productId', component: ProductDetailsComponent, title: 'Product Details' }, 
+        { path: ':productId/edit', component: UpdateProductComponent, title: 'Update Products'},            
     ],
 },
   { path: 'about', component: AboutComponent},
