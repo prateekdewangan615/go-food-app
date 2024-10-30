@@ -4,11 +4,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from '../../../services/product.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-add-product',
   standalone: true,
-  imports: [FormsModule, CommonModule, ReactiveFormsModule, HttpClientModule],
+  imports: [FormsModule, CommonModule, ReactiveFormsModule, HttpClientModule, RouterModule],
   templateUrl: './add-product.component.html',
   styles: ``
 })

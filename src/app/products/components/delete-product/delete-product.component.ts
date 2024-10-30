@@ -38,7 +38,7 @@ export class DeleteProductComponent implements OnInit {
       this.productService.deleteProduct(this.productId).subscribe(
         response => {
           this.successMessage = 'Product deleted successfully!';
-          setTimeout(() => this.router.navigate(['/products']), 2000);
+         //setTimeout(() => this.router.navigate(['/products']), 2000);
         },
         error => {
           this.errorMessage = 'Error deleting product. Please try again.';

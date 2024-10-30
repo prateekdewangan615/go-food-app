@@ -1,22 +1,18 @@
-<a routerLink="/products" class="btn btn-link">Go back</a>
+<h1 class="text-center mb-4 mt-4">Product Details</h1>
+<a routerLink="/products" class="btn btn-primary mb-3">Go back</a>
 <div class="container">
   <div class="row">
-    <div class="card col-md-12">
-      <!-- TODO: show loader/spinner here-->
-      <div class="card-body">
-        <h5 class="card-title">{{product?.name}}</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <p>Price: {{product?.price}}</p>
-        <p>Quantiy: {{product?.quantity}}</p>
-        <p>Category: {{product?.category}}</p>
-        <a routerLink="edit" class="btn btn-primary">
-          Edit
-        </a>
-        <a routerLink="delete" class="btn btn-danger">Delete</a>
-
+    <div class="card col-md-12" style="border-radius: 2px; box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);">
+      <div class="card-body" style="padding: 2rem;">
+        <h3 class="card-title text-center" style="margin-bottom: 1.5rem; font-size: 1.2rem;">{{product?.name}}</h3>
+        <p style="font-size: 1.2rem;">Price: {{product?.price}}</p>
+        <p style="font-size: 1.2rem;">Quantity: {{product?.quantity}}</p>
+        <p style="font-size: 1.2rem;">Category: {{product?.category}}</p>
+        
+        <div class="text-center mt-4">
+          <a routerLink="edit" class="btn btn-primary" style="margin-right: 10px;">Edit</a>
+          <a routerLink="delete" class="btn btn-danger">Delete</a>
+        </div>
       </div>
     </div>
   </div>
