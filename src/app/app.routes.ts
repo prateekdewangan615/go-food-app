@@ -8,6 +8,7 @@ import { ListProductsComponent } from './products/components/list-products/list-
 import { LoginComponent } from './auth/components/login/login.component';
 import { SignupComponent } from './auth/components/signup/signup.component';
 import { LogoutComponent } from './auth/components/logout/logout.component';
+import { ContactComponent } from './contact/components/contact/contact.component';
 
 
 export const routes: Routes = [
@@ -21,6 +22,7 @@ export const routes: Routes = [
     ],
 },
   { path: 'about', component: AboutComponent},
+  { path: 'contact', component: ContactComponent},
   { path: 'auth/login', component: LoginComponent, title: "Login"},
   { path: 'auth/signup', component: SignupComponent, title: "SignUp"},
   { path: 'auth/logout', component: LogoutComponent, title: "Logout"},
