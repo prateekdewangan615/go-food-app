@@ -27,23 +27,6 @@
         </div>
       </div>
 
-      <!-- Image Upload -->
-      <div class="form-group row mb-3">
-        <label for="imageInput" class="col-sm-2 col-form-label">Image</label>
-        <div class="col-sm-10">
-          <input
-            type="file"
-            class="form-control"
-            formControlName="image"
-            accept="image/*"
-            (change)="onFileSelected($event)"
-          />
-          <div class="invalid-feedback" *ngIf="addProductForm.get('image')?.touched && addProductForm.get('image')?.invalid">
-            Image is required
-          </div>
-        </div>
-      </div>
-
       <!-- Price -->
       <div class="form-group row mb-3">
         <label for="priceInput" class="col-sm-2 col-form-label">Price</label>
