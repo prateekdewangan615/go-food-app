@@ -24,10 +24,10 @@ import { ProductService } from '../../../services/product.service';
   `,
 })
 export class ListProductsComponent {
-  cardList =[
+  products =[
     {
       productId: '1',
-      productName : 'Veg Grilled Sandwich',
+      productName : 'Chocolate Ice cream',
       productPrice : 'Rs.80',
       productQuantity: '2',
       productCategory: 'Half'
