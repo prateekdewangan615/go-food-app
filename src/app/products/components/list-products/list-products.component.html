@@ -15,7 +15,7 @@
 <br> <br>
 <section id="product-details"  >
   <div class="product-details wrapper">
-    <div class="conatiner">
+    <div class="container">
       <div class="row">
         <div class="col-sm-12">
           <div class="text-content text-center">
@@ -24,13 +24,13 @@
         </div>
       </div>
       <div class="row pt-5">
-        <div class="col-lg-4 col-md-3 mb-lg-3 mb-3" *ngFor="let card of cardList"  >
+        <div class="col-lg-4 col-md-3 mb-lg-3 mb-3" *ngFor="let card of products"  >
           <div class="card" >
             <div class="card-body">
-              <h5 class="card-title">{{card.productName}}</h5>
-              <b>Price: </b>{{card.productPrice}} <br>
-              <b>Quantity: </b>{{card.productQuantity}} <br>
-              <b>Category: </b>{{card.productCategory}} <br>
+              <h5 class="card-title">{{card.name}}</h5>
+              <b>Price: </b>{{card.price}} <br>
+              <b>Quantity: </b>{{card.quantity}} <br>
+              <b>Category: </b>{{card.category}} <br>
               <div class="text-center">
                 <a routerLink="/products/{{card.productId}}" class="btn btn-primary" data-mdb-ripple-init>View Details</a>
               </div>
