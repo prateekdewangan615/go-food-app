@@ -8,7 +8,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
+<<<<<<< Updated upstream
   private apiUrl = 'https://localhost:8080/api/foodcards';
+=======
+  private apiUrl = 'https://localhost:8080/api/foodcards'; // Replace with the API endpoint
+>>>>>>> Stashed changes
 
   constructor(private http: HttpClient) {}
 

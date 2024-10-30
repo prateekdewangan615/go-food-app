@@ -6,14 +6,14 @@
           <h1>Bring People Together with Great Food</h1>
         </div>
         <div class="mt-4">
-          <button class="white-btn ms-lg-4 mt-lg-0 mt-4">Order now<i class="fas fa-angle-right ps-3"></i></button>
+          <a class=" btn btn-primary ms-lg-4 mt-lg-0 mt-4 " href="/products#product-details">Menu Details<i class="fas fa-angle-right ps-3"></i></a>
         </div>
       </div>
     </div>
   </div>
 </section>
-<br>
-<section id="product-details">
+<br> <br>
+<section id="product-details"  >
   <div class="product-details wrapper">
     <div class="conatiner">
       <div class="row">
@@ -24,119 +24,15 @@
         </div>
       </div>
       <div class="row pt-5">
-        <div class="col-lg-4 col-md-3 mb-lg-0 mb-3">
-          <div class="card">
-            <img src="https://thumbs.dreamstime.com/b/veg-grilled-sandwich-served-ketchup-isolated-over-rustic-wooden-background-selective-focus-224440470.jpg" class="card-img-top" />
+        <div class="col-lg-4 col-md-3 mb-lg-3 mb-3" *ngFor="let card of cardList"  >
+          <div class="card" >
+            <img [src]="card.imageSource" class="card-img-top" />
             <div class="card-body">
-              <h5 class="card-title">Veg Grilled Sandwich</h5>
-              <b>Time: </b>10-15 Minutes <br>
-              <b>Cost:</b> Rs.80 <br>
+              <h5 class="card-title">{{card.dishName}}</h5>
+              <b>Time: </b>{{card.dishTime}} <br>
+              <b>Cost: </b>{{card.dishCost}} <br>
               <div class="text-center">
-                <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Order Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-3 mb-lg-0 mb-3">
-          <div class="card">
-            <img src="https://media.gettyimages.com/id/182209800/photo/chicken-salad-sandwich.jpg?s=612x612&w=0&k=20&c=I8skcgvN2Otm_qHhy9zzjxr_jmmUGdTZkgmHF7gxtRI=" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Chicken Salad Sandwich</h5>
-              <b>Time: </b>10-15 Minutes <br>
-              <b>Cost:</b> Rs.100 <br>
-              <div class="text-center">
-                <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Order Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-3 mb-lg-0 mb-3">
-          <div class="card">
-            <img src="https://media.gettyimages.com/id/1401260285/photo/closeup-french-fries-potato-chips-yellow-crispy-fries-in-wooden-basket-on-white-table-snack.jpg?s=612x612&w=0&k=20&c=4x27hz_rFwvjDwlkx-DZB7_RE-hy91RmMQc3FlWNK7I=" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">French Fries</h5>
-              <b>Time: </b>10-15 Minutes <br>
-              <b>Cost:</b> Rs.50 <br>
-              <div class="text-center">
-                <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Order Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-3 mb-lg-0 mb-3">
-          <div class="card">
-            <img src="https://th.bing.com/th/id/OIP.zkH-rNS9zFngcoW2OAUXiwHaDQ?rs=1&pid=ImgDetMain" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Veg Briyani</h5>
-              <b>Time: </b>15-20 Minutes <br>
-              <b>Cost:</b> Rs.120 <br>
-              <div class="text-center">
-                <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Order Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-3 mb-lg-0 mb-3">
-          <div class="card">
-            <img src="https://revi.b-cdn.net/wp-content/uploads/2017/01/paneer-biryani-1.jpg" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Paneer Briyani</h5>
-              <b>Time: </b>15-20 Minutes <br>
-              <b>Cost:</b> Rs.130 <br>
-              <div class="text-center">
-                <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Order Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-3 mb-lg-0 mb-3">
-          <div class="card">
-            <img src="https://www.pavaniskitchen.com/wp-content/uploads/2021/04/egg-biryani-recipe-1024x1024.jpg" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Egg Briyani</h5>
-              <b>Time: </b>15-20 Minutes <br>
-              <b>Cost:</b> Rs.140 <br>
-              <div class="text-center">
-                <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Order Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-3 mb-lg-0 mb-3">
-          <div class="card">
-            <img src="https://th.bing.com/th/id/OIP.6XHvDlKff_0lt2_fPpIijgHaHy?w=531&h=558&rs=1&pid=ImgDetMain" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Chicken Briyani</h5>
-              <b>Time: </b>15-20 Minutes <br>
-              <b>Cost:</b> Rs.150 <br>
-              <div class="text-center">
-                <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Order Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-3 mb-lg-0 mb-3">
-          <div class="card">
-            <img src="https://th.bing.com/th/id/R.460411373678d4980f0a6a1f0251a426?rik=ZfoHjkVG%2bHnD7A&riu=http%3a%2f%2fwww.nyfoodgasm.com%2fwp-content%2fuploads%2f2015%2f04%2fHops_cocktail_6-1024x769.jpg&ehk=FxCNnarlOiaYDaSN6dkhno3MeXmX147cgsrvLnzv2ro%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Sweet Lime Soda</h5>
-              <b>Time: </b> 5 Minutes <br>
-              <b>Cost:</b> Rs.30 <br>
-              <div class="text-center">
-                <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Order Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-3 mb-lg-0 mb-3">
-          <div class="card">
-            <img src="https://healthyhelperkaila.com/wp-content/uploads/2024/06/homemade-creamy-soft-serve-chocolate-ice-cream-in-j_Ii0GJHQrulcvGEqqIRNw-XamVoJR_QfeO1qF0mBQ0YA.jpeg" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Chocolate Ice cream</h5>
-              <b>Time: </b> 5 Minutes <br>
-              <b>Cost:</b> Rs.40 <br>
-              <div class="text-center">
-                <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Order Now</a>
+                <a routerLink="/products/{{card.dishId}}" class="btn btn-primary" data-mdb-ripple-init>Order Now</a>
               </div>
             </div>
           </div>
