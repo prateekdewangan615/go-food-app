@@ -24,6 +24,7 @@ export class UpdateProductComponent {
       name: new FormControl('', Validators.required),
       quantity: new FormControl(null, [Validators.required, Validators.min(1)]),
       price: new FormControl(null, [Validators.required, Validators.min(0)]),
+      description: new FormControl('', Validators.required),
       category: new FormControl('', Validators.required),
     });
   }
@@ -41,6 +42,7 @@ export class UpdateProductComponent {
         name : form.value.nameInput,
         price : form.value.priceInput,
         quantity : form.value.quantityInput,
+        description : form.value.descriptionInput,
         category : form.value.categoryInput,
       };
       this.productService.updateProduct(this.productId, updatedData).subscribe(response=>{

@@ -24,6 +24,7 @@ export class AddProductComponent implements OnInit{
       name: ['', Validators.required],
       quantity: [null, [Validators.required, Validators.min(1)]],
       price: [null, [Validators.required, Validators.min(0)]],
+      description: ['', Validators.required],
       category: ['', Validators.required],
     });
   }
@@ -36,6 +37,7 @@ export class AddProductComponent implements OnInit{
         name: this.addProductForm.value.name,
         quantity: this.addProductForm.value.quantity,
         price: this.addProductForm.value.price,
+        description: this.addProductForm.value.description,
         category: this.addProductForm.value.category,
       };
   

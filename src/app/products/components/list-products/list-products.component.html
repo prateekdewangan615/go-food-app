@@ -23,13 +23,14 @@
           </div>
         </div>
       </div>
-      <div class="row pt-5">
-        <div class="col-lg-4 col-md-3 mb-lg-5 mb-5" *ngFor="let card of products"  >
+      <div class="row pt-5 justify-content-center">
+        <div class="col-lg-5 col-md-4 mb-lg-5 mb-5" *ngFor="let card of products"  >
           <div class="card shadow" >
             <div class="card-body">
               <h5 class="card-title">{{card.name}}</h5>
               <b>Price: </b>{{card.price}} <br>
               <b>Quantity: </b>{{card.quantity}} <br>
+              <b>Description: </b>{{card.description}} <br>
               <b>Category: </b>{{card.category}} <br>
               <div class="text-center">
                 <a routerLink="/products/{{card.id}}" class="btn btn-primary mt-3" data-mdb-ripple-init>View Details</a>
