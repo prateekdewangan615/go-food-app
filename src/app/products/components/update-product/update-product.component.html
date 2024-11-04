@@ -7,60 +7,123 @@
       <div class="form-group row mb-3">
         <label for="nameInput" class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-10">
-          <input type="text" id="nameInput" class="form-control" placeholder="Enter name" name="nameInput"
-            [(ngModel)]="productData.name" required />
-          <div class="invalid-feedback">Name is Required</div>
+          <input
+            type="text"
+            id="nameInput"
+            class="form-control"
+            placeholder="Enter name"
+            name="nameInput"
+            [(ngModel)]="productData.name"
+            required
+            #nameInput="ngModel"
+          />
+          <div *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)" class="invalid-feedback">
+            Name is required.
+          </div>
         </div>
       </div>
       <div class="form-group row mb-3">
         <label for="priceInput" class="col-sm-2 col-form-label">Price</label>
         <div class="col-sm-10">
-          <input type="text" id="priceInput" class="form-control" placeholder="Enter Price" name="priceInput"
-            [(ngModel)]="productData.price" required />
-          <div class="invalid-feedback">Price is Required</div>
+          <input
+            type="text"
+            id="priceInput"
+            class="form-control"
+            placeholder="Enter Price"
+            name="priceInput"
+            [(ngModel)]="productData.price"
+            required
+            #priceInput="ngModel"
+          />
+          <div *ngIf="priceInput.invalid && (priceInput.dirty || priceInput.touched)" class="invalid-feedback">
+            Price is required.
+          </div>
         </div>
       </div>
       <div class="form-group row mb-3">
         <label for="quantityInput" class="col-sm-2 col-form-label">Quantity</label>
         <div class="col-sm-10">
-          <input type="text" id="quantityInput" class="form-control" placeholder="Enter Quantity" name="quantityInput"
-            [(ngModel)]="productData.quantity" required />
-          <div class="invalid-feedback">Quantity is Required</div>
+          <input
+            type="text"
+            id="quantityInput"
+            class="form-control"
+            placeholder="Enter Quantity"
+            name="quantityInput"
+            [(ngModel)]="productData.quantity"
+            required
+            #quantityInput="ngModel"
+          />
+          <div *ngIf="quantityInput.invalid && (quantityInput.dirty || quantityInput.touched)" class="invalid-feedback">
+            Quantity is required.
+          </div>
+        </div>
+      </div>
+      <div class="form-group row mb-3">
+        <label for="descriptionInput" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            id="descriptionInput"
+            class="form-control"
+            placeholder="Enter description"
+            name="descriptionInput"
+            [(ngModel)]="productData.description"
+            required
+            #nameInput="ngModel"
+          />
+          <div class="invalid-feedback">
+            Description is required.
+          </div>
         </div>
       </div>
       <div class="form-group row mb-3">
         <label for="categoryInput" class="col-sm-2 col-form-label">Category</label>
         <div class="col-sm-10">
-          <input type="text" id="categoryInput" class="form-control" placeholder="Enter Category" name="categoryInput"
-            [(ngModel)]="productData.category" required />
-          <div class="invalid-feedback">Category is Required</div>
+          <input
+            type="text"
+            id="categoryInput"
+            class="form-control"
+            placeholder="Enter Category"
+            name="categoryInput"
+            [(ngModel)]="productData.category"
+            required
+            #categoryInput="ngModel"
+          />
+          <div *ngIf="categoryInput.invalid && (categoryInput.dirty || categoryInput.touched)" class="invalid-feedback">
+            Category is required.
+          </div>
         </div>
       </div>
 
-      <div *ngIf="successMessage" 
-     class="position-fixed bottom-0 end-0 p-3">
-    <div class="toast align-items-center text-bg-success border-0 show" 
-         style="width: 400px; height: 75px;" 
-         role="alert" 
-         aria-live="assertive" 
-         aria-atomic="true">
-      <div class="d-flex">
-        <div class="toast-body" style="font-size: 1.2rem; padding: 1rem;">
-          Updated successfully!!
+      <div *ngIf="successMessage" class="position-fixed bottom-0 end-0 p-3">
+        <div
+          class="toast align-items-center text-bg-success border-0 show"
+          style="width: 400px; height: 75px"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="d-flex">
+            <div class="toast-body" style="font-size: 1.2rem; padding: 1rem">
+              Updated successfully!!
+            </div>
+            <button
+              type="button"
+              class="btn-close btn-close-white me-2 m-auto"
+              (click)="successMessage = false"
+              aria-label="Close"
+            ></button>
+          </div>
         </div>
-        <button type="button" 
-                class="btn-close btn-close-white me-2 m-auto" 
-                (click)="successMessage = false" 
-                aria-label="Close"></button>
       </div>
-    </div>
-</div>
-
-
-
 
       <div class="text-center">
-        <button type="submit" class="btn btn-primary" [disabled]="updateForm.invalid" style="width: 100%;">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="updateForm.invalid"
+          style="width: 100%"
+        >
           Save changes
         </button>
       </div>
