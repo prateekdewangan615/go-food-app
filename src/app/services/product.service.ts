@@ -9,7 +9,8 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  private apiUrl = 'http://localhost:8080/GoFood/api/foodcards'; // Replace with the API endpoint
+  private apiUrl = 'http://localhost:8080/GoFood/api/foodcards'; 
+  private addToCartApi = 'http://localhost:8080/GoFood/api/add'
 
 
   constructor(private http: HttpClient) {}
@@ -39,6 +40,11 @@ export class ProductService {
   deleteProduct(id: number): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'text/plain' });
     return this.http.delete(`${this.apiUrl}/${id}`, { headers, responseType: 'text' });
+  }
+
+  addToCart(CartPoductData: any): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<any>(this.addToCartApi, CartPoductData);
   }
   
 }

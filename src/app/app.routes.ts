@@ -10,6 +10,7 @@ import { SignupComponent } from './auth/components/signup/signup.component';
 import { LogoutComponent } from './auth/components/logout/logout.component';
 import { ContactComponent } from './contact/components/contact/contact.component';
 import { DeleteProductComponent } from './products/components/delete-product/delete-product.component';
+import { CartComponent } from './cart/cart.component';
 
 
 export const routes: Routes = [
@@ -31,5 +32,6 @@ export const routes: Routes = [
   {path: 'auth',
       loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
+  {path: 'cart', component: CartComponent}
    
 ];
