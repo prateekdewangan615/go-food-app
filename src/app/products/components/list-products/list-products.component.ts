@@ -27,14 +27,11 @@ export class ListProductsComponent implements OnInit{
   products : any[] = [];
   
   constructor(private productService: ProductService){
-    console.log("inside list products constructor")
   }
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe((response : any)=>{
-      console.log(response);
       this.products = response;
     });
-    console.log("inside ng oninit")
   }
 }

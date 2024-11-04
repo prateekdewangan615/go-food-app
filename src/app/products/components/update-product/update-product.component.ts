@@ -44,8 +44,6 @@ export class UpdateProductComponent {
         category : form.value.categoryInput,
       };
       this.productService.updateProduct(this.productId, updatedData).subscribe(response=>{
-        console.log("Inside update products");
-        console.log(response);
         this.successMessage = true;
         form.reset(); 
       },error=>{

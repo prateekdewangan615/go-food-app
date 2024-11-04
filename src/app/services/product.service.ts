@@ -27,7 +27,6 @@ export class ProductService {
   // Add a new product
   addProduct(productData: any): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    console.log(productData);
     return this.http.post<any>(this.apiUrl, productData);
   }
 
@@ -38,6 +37,8 @@ export class ProductService {
 
   // Delete a product
   deleteProduct(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/${id}`);
+    const headers = new HttpHeaders({ 'Content-Type': 'text/plain' });
+    return this.http.delete(`${this.apiUrl}/${id}`, { headers, responseType: 'text' });
   }
+  
 }
