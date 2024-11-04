@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, NgForm, Validators } from '@angular/forms';
 import { ProductService } from '../../../services/product.service';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -17,7 +17,7 @@ export class UpdateProductComponent {
   productData: any = {};
 
   updateProductForm : FormGroup;
-  constructor(private productService: ProductService, private route: ActivatedRoute){
+  constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router){
     this.productId = this.route.snapshot.paramMap.get('productId');
 
     this.updateProductForm = new FormGroup({
@@ -46,6 +46,9 @@ export class UpdateProductComponent {
       this.productService.updateProduct(this.productId, updatedData).subscribe(response=>{
         this.successMessage = true;
         form.reset(); 
+        setTimeout(() => {
+          this.router.navigate(['/products']); // Navigate to the product list
+        }, 2000); 
       },error=>{
         console.error('Update failed', error);
       });

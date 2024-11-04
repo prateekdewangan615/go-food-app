@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from '../../../services/product.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-add-product',
@@ -19,7 +19,7 @@ export class AddProductComponent implements OnInit{
   isSaved = false;
   showError = false;
 
-  constructor(private fb: FormBuilder, private productService: ProductService) {
+  constructor(private fb: FormBuilder, private productService: ProductService, private router: Router) {
     this.addProductForm = this.fb.group({
       name: ['', Validators.required],
       quantity: [null, [Validators.required, Validators.min(1)]],
@@ -44,6 +44,9 @@ export class AddProductComponent implements OnInit{
         next: (response) => {
           this.isSaved = true; // Set success state
           this.addProductForm.reset(); // Optionally reset the form
+          setTimeout(() => {
+            this.router.navigate(['/products']); // Navigate to the product list
+          }, 2000); 
         },
         error: (error) => {
           console.error('Error adding product', error);
