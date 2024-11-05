@@ -33,7 +33,7 @@ import { CommonModule } from '@angular/common';
           <div class="row">
             <div class="col-sm-12">
               <div class="text-content text-center">
-                <h2>Explore our Food</h2>
+                <h2>Cart</h2>
               </div>
             </div>
           </div>
@@ -47,6 +47,7 @@ import { CommonModule } from '@angular/common';
                   <h5 class="card-title">{{ card.foodName }}</h5>
                   <b>Price: </b>{{ card.price }} <br />
                   <b>Quantity: </b>{{ card.quantity }} <br />
+                  <b>Description: </b>{{ card.description }} <br />
                   <b>Category: </b>{{ card.category }} <br />
                 </div>
               </div>
@@ -67,6 +68,7 @@ export class CartComponent {
     this.CartService.getProducts().subscribe((response: any) => {
       this.products = response;
       console.log(this.products);
+      
     });
   }
 }
