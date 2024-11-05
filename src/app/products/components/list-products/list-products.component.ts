@@ -26,6 +26,8 @@ import { CartService } from '../../../services/cart.service';
 })
 export class ListProductsComponent implements OnInit {
   products: any[] = [];
+  showToast: boolean = false;
+  showToastError: boolean = false;
 
   constructor(
     private productService: ProductService,
@@ -42,18 +44,34 @@ export class ListProductsComponent implements OnInit {
     const productDetails = {
       id: product.id,
       foodName: product.name,
-      quantity: product.quantity,
       price: product.price,
-      option: product.category
+      quantity: product.quantity,
+      description: product.description,
+      category: product.category
     };
-    this.cartService.addToCart(productDetails).subscribe(response => {
-      console.log("Product added to cart:", response);
-      // Fetch updated cart data
-      this.cartService.getProducts().subscribe(cartData => {
-        console.log("Updated Cart:", cartData);
-        // Update any relevant state with cartData if needed
-      });
-    });
+
+    this.cartService.addToCart(productDetails).subscribe(
+      (response) => {
+        console.log('Product added to cart:', response);
+        // Display success toast
+        this.showToast = true;
+        setTimeout(() => this.showToast = false, 3000); // Hide toast after 3 seconds
+
+        // Fetch updated cart data (Optional)
+        this.cartService.getProducts().subscribe(cartData => {
+          console.log('Updated Cart:', cartData);
+        });
+      },
+      (error) => {
+        console.error('Failed to add product to cart:', error);
+        // Display error toast
+        this.showToastError = true;
+        setTimeout(() => this.showToastError = false, 3000); // Hide error toast after 3 seconds
+      }
+    );
   }
-  
+
+  closeToast() {
+    this.showToast = this.showToastError = false;
+  }
 }
