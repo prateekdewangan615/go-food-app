@@ -12,15 +12,8 @@ import { RouterModule } from '@angular/router';
       <div class="container-fluid px-0 top-banner">
         <div class="container">
           <div class="row">
-            <div class="col-lg-5 col-md-6">
+            <div class="col-lg-12 col-md-6 text-center mt-3">
               <h1>Bring People Together with Great Food</h1>
-            </div>
-            <div class="mt-4">
-              <a
-                class=" btn btn-primary ms-lg-4 mt-lg-0 mt-4 "
-                href="/products#product-details"
-                >Product List<i class="fas fa-angle-right ps-3"></i
-              ></a>
             </div>
           </div>
         </div>
@@ -72,3 +65,4 @@ export class CartComponent {
     });
   }
 }
+
