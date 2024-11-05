@@ -1,5 +1,8 @@
+<!-- Navbar unordered list for navigation items -->
 <ul class="navbar-nav me-auto mb-2 mb-md-0">
+  <!-- Loop through each menu item (link) in the menus array -->
   <li class="nav-item" *ngFor="let link of menus">
+    <!-- Navigation link, binds the route dynamically based on the 'route' property of the 'link' object -->
     <a class="nav-link" [routerLink]="link.route" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">{{ link.label }}</a>
   </li>
 </ul>

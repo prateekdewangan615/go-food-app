@@ -1,13 +1,29 @@
+<!-- Navigation bar with fixed position at the top of the page, using Bootstrap classes -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <div class="container-fluid">
+    <!-- Container to center the navbar content -->
+    <div class="container-fluid">
+      
+      <!-- Brand name (link) for the application, usually the logo or app name -->
       <a class="navbar-brand app-name" href="#">Go Food</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+      
+      <!-- Button that toggles the collapse of the navbar (for smaller screens) -->
+      <button class="navbar-toggler" type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#navbarCollapse"  
+              aria-controls="navbarCollapse"  
+              aria-expanded="false"  
+              aria-label="Toggle navigation"> 
+        
+        <!-- Icon displayed on the navbar toggle button (hamburger icon) -->
+        <span class="navbar-toggler-icon"></span>
       </button>
+  
+      <!-- Collapsible section that contains the menu items (only visible on larger screens) -->
       <div class="collapse navbar-collapse" id="navbarCollapse">
-          <app-menu-list></app-menu-list>
-
+        <!-- Custom Angular component that represents the menu list -->
+        <app-menu-list></app-menu-list>
       </div>
-  </div>
-</nav>
+      
+    </div>
+  </nav>
+  
