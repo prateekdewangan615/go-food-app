@@ -11,27 +11,40 @@ import { LogoutComponent } from './auth/components/logout/logout.component';
 import { ContactComponent } from './contact/components/contact/contact.component';
 import { DeleteProductComponent } from './products/components/delete-product/delete-product.component';
 import { CartComponent } from './cart/cart.component';
-
+import { title } from 'node:process';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, title: 'Home' },
   {
-    path: 'products', children: [
-        { path: '', component: ListProductsComponent, title: 'Home'},
-        { path: 'add', component: AddProductComponent, title: 'Add Products'},
-        { path: ':productId', component: ProductDetailsComponent, title: 'Product Details' }, 
-        { path: ':productId/edit', component: UpdateProductComponent, title: 'Update Products'},      
-        { path: ':productId/delete', component: DeleteProductComponent, title: 'Delete Product'},          
+    path: 'products',
+    children: [
+      { path: '', component: ListProductsComponent, title: 'Products' },
+      { path: 'add', component: AddProductComponent, title: 'Add Products' },
+      {
+        path: ':productId',
+        component: ProductDetailsComponent,
+        title: 'Product Details',
+      },
+      {
+        path: ':productId/edit',
+        component: UpdateProductComponent,
+        title: 'Update Products',
+      },
+      {
+        path: ':productId/delete',
+        component: DeleteProductComponent,
+        title: 'Delete Product',
+      },
     ],
-},
-  { path: 'about', component: AboutComponent},
-  { path: 'contact', component: ContactComponent},
-  { path: 'auth/login', component: LoginComponent, title: "Login"},
-  { path: 'auth/signup', component: SignupComponent, title: "SignUp"},
-  { path: 'auth/logout', component: LogoutComponent, title: "Logout"},
-  {path: 'auth',
-      loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
-  {path: 'cart', component: CartComponent}
-   
+  { path: 'about', component: AboutComponent, title: 'About Us' },
+  { path: 'contact', component: ContactComponent, title: 'Contact' },
+  { path: 'auth/login', component: LoginComponent, title: 'Login' },
+  { path: 'auth/signup', component: SignupComponent, title: 'SignUp' },
+  { path: 'auth/logout', component: LogoutComponent, title: 'Logout' },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+  { path: 'cart', component: CartComponent },
 ];

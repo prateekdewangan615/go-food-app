@@ -9,7 +9,7 @@ import { MenuListComponent } from '../menu-list/menu-list.component';
     <footer class="text-center">
       <hr>
       <app-menu-list></app-menu-list>
-      <p class="copyright">Copyright 2024</p>
+      <p class="copyright"><b>Copyright &copy; | 2024</b></p>
     </footer>
   `,
   styles: ``
