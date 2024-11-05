@@ -1,9 +1,16 @@
 <div class="col-md-8 offset-md-2">
+  <!-- Title of the form page -->
   <h3 class="text-center mb-4 mt-4">Update Product Details</h3>
+
+  <!-- Button to navigate back to the product list page -->
   <a routerLink="/products" class="btn btn-primary mb-3">Go back</a>
 
+  <!-- Card containing the product update form -->
   <div class="card" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 2rem">
+    <!-- The form to update product details -->
     <form #updateForm="ngForm" (ngSubmit)="updateProduct(updateForm)">
+      
+      <!-- Name input field -->
       <div class="form-group row mb-3">
         <label for="nameInput" class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-10">
@@ -13,15 +20,18 @@
             class="form-control"
             placeholder="Enter name"
             name="nameInput"
-            [(ngModel)]="productData.name"
-            required
-            #nameInput="ngModel"
+            [(ngModel)]="productData.name" 
+            required  
+            #nameInput="ngModel"  
           />
+          <!-- Error message if Name is not provided -->
           <div *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)" class="invalid-feedback">
             Name is required.
           </div>
         </div>
       </div>
+
+      <!-- Price input field -->
       <div class="form-group row mb-3">
         <label for="priceInput" class="col-sm-2 col-form-label">Price</label>
         <div class="col-sm-10">
@@ -31,15 +41,18 @@
             class="form-control"
             placeholder="Enter Price"
             name="priceInput"
-            [(ngModel)]="productData.price"
-            required
-            #priceInput="ngModel"
+            [(ngModel)]="productData.price"  
+            required  
+            #priceInput="ngModel"  
           />
+          <!-- Error message if Price is not provided -->
           <div *ngIf="priceInput.invalid && (priceInput.dirty || priceInput.touched)" class="invalid-feedback">
             Price is required.
           </div>
         </div>
       </div>
+
+      <!-- Quantity input field -->
       <div class="form-group row mb-3">
         <label for="quantityInput" class="col-sm-2 col-form-label">Quantity</label>
         <div class="col-sm-10">
@@ -49,15 +62,18 @@
             class="form-control"
             placeholder="Enter Quantity"
             name="quantityInput"
-            [(ngModel)]="productData.quantity"
-            required
-            #quantityInput="ngModel"
+            [(ngModel)]="productData.quantity"  
+            required  
+            #quantityInput="ngModel"  
           />
+          <!-- Error message if Quantity is not provided -->
           <div *ngIf="quantityInput.invalid && (quantityInput.dirty || quantityInput.touched)" class="invalid-feedback">
             Quantity is required.
           </div>
         </div>
       </div>
+
+      <!-- Description input field -->
       <div class="form-group row mb-3">
         <label for="descriptionInput" class="col-sm-2 col-form-label">Description</label>
         <div class="col-sm-10">
@@ -67,15 +83,18 @@
             class="form-control"
             placeholder="Enter description"
             name="descriptionInput"
-            [(ngModel)]="productData.description"
-            required
-            #nameInput="ngModel"
+            [(ngModel)]="productData.description"  
+            required 
+            #descriptionInput="ngModel"  
           />
-          <div class="invalid-feedback">
+          <!-- Error message if Description is not provided -->
+          <div *ngIf="descriptionInput.invalid && (descriptionInput.dirty || descriptionInput.touched)" class="invalid-feedback">
             Description is required.
           </div>
         </div>
       </div>
+
+      <!-- Category input field -->
       <div class="form-group row mb-3">
         <label for="categoryInput" class="col-sm-2 col-form-label">Category</label>
         <div class="col-sm-10">
@@ -85,16 +104,18 @@
             class="form-control"
             placeholder="Enter Category"
             name="categoryInput"
-            [(ngModel)]="productData.category"
-            required
-            #categoryInput="ngModel"
+            [(ngModel)]="productData.category"  
+            required 
+            #categoryInput="ngModel"  
           />
+          <!-- Error message if Category is not provided -->
           <div *ngIf="categoryInput.invalid && (categoryInput.dirty || categoryInput.touched)" class="invalid-feedback">
             Category is required.
           </div>
         </div>
       </div>
 
+      <!-- Success Toast Message (appears when the product is updated successfully) -->
       <div *ngIf="successMessage" class="position-fixed bottom-0 end-0 p-3">
         <div
           class="toast align-items-center text-bg-success border-0 show"
@@ -107,6 +128,7 @@
             <div class="toast-body" style="font-size: 1.2rem; padding: 1rem">
               Updated successfully!!
             </div>
+            <!-- Close button to hide the toast -->
             <button
               type="button"
               class="btn-close btn-close-white me-2 m-auto"
@@ -117,11 +139,12 @@
         </div>
       </div>
 
+      <!-- Submit button to save the updated product details -->
       <div class="text-center">
         <button
           type="submit"
           class="btn btn-primary"
-          [disabled]="updateForm.invalid"
+          [disabled]="updateForm.invalid" 
           style="width: 100%"
         >
           Save changes
