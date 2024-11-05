@@ -1,18 +1,38 @@
+<!-- Title Section -->
 <h1 class="text-center mb-4 mt-4">Product Details</h1>
 <a routerLink="/products" class="btn btn-dark mb-3">Go back</a>
 <div class="container">
   <div class="row">
+    <!-- Card for displaying the product information -->
     <div class="card col-md-12" style="border-radius: 2px; box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);">
       <div class="card-body" style="padding: 2rem;">
-        <h3 class="card-title text-center" style="margin-bottom: 1.5rem; font-size: 1.2rem;">{{product?.name}}</h3>
-        <p style="font-size: 1.2rem;">Price: {{product?.price}}</p>
-        <p style="font-size: 1.2rem;">Quantity: {{product?.quantity}}</p>
-        <p style="font-size: 1.2rem;">Description: {{product?.description}}</p>
-        <p style="font-size: 1.2rem;">Category: {{product?.category}}</p>
         
+        <!-- Product Name: Displayed dynamically using Angular interpolation -->
+        <h3 class="card-title text-center" style="margin-bottom: 1.5rem; font-size: 1.2rem;">
+          {{ product?.name }}
+        </h3>
+        
+        <!-- Product Price: Displayed dynamically using Angular interpolation -->
+        <p style="font-size: 1.2rem;">Price: {{ product?.price }}</p>
+        
+        <!-- Product Quantity: Displayed dynamically using Angular interpolation -->
+        <p style="font-size: 1.2rem;">Quantity: {{ product?.quantity }}</p>
+        
+        <!-- Product Description: Displayed dynamically using Angular interpolation -->
+        <p style="font-size: 1.2rem;">Description: {{ product?.description }}</p>
+        
+        <!-- Product Category: Displayed dynamically using Angular interpolation -->
+        <p style="font-size: 1.2rem;">Category: {{ product?.category }}</p>
+        
+        <!-- Buttons for editing or deleting the product -->
         <div class="text-center mt-4">
+          
+          <!-- Button to navigate to the product edit page -->
           <a routerLink="edit" class="btn btn-primary" style="margin-right: 10px;">Edit</a>
+          
+          <!-- Button to navigate to the product delete page -->
           <a routerLink="delete" class="btn btn-danger">Delete</a>
+          
         </div>
       </div>
     </div>

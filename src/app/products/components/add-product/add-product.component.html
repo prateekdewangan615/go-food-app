@@ -1,14 +1,17 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
+      <!-- Header: Add Food Product page -->
       <h1 class="text-center mb-4">Add Food Product</h1>
+
+      <!-- Button to navigate back to the product list page -->
       <button class="btn btn-dark mb-3" routerLink="/products">Go Back</button>
 
       <!-- Form for adding food products -->
       <div class="border p-4 rounded shadow" style="width: 100%; max-width: 600px;">
         <form [formGroup]="addProductForm" (ngSubmit)="handleAddProduct()">
 
-          <!-- Product Name -->
+          <!-- Product Name Input Field -->
           <div class="form-group row mb-3">
             <label for="nameInput" class="col-sm-4 col-form-label">Product Name</label>
             <div class="col-sm-8">
@@ -16,18 +19,19 @@
                 type="text"
                 class="form-control"
                 placeholder="Enter Product Name"
-                formControlName="name"
+                formControlName="name"  
                 [ngClass]="{
                   'is-invalid': addProductForm.get('name')?.touched && addProductForm.get('name')?.invalid
-                }"
+                }" 
               />
+              <!-- Error message for Product Name if the input is invalid -->
               <div class="invalid-feedback">
                 <div *ngIf="addProductForm.get('name')?.hasError('required')">Product Name is required</div>
               </div>
             </div>
           </div>
 
-          <!-- Price -->
+          <!-- Price Input Field -->
           <div class="form-group row mb-3">
             <label for="priceInput" class="col-sm-4 col-form-label">Price</label>
             <div class="col-sm-8">
@@ -35,20 +39,21 @@
                 type="number"
                 class="form-control"
                 placeholder="Enter Price"
-                formControlName="price"
+                formControlName="price" 
                 [ngClass]="{
                   'is-invalid': addProductForm.get('price')?.touched && addProductForm.get('price')?.invalid
                 }"
                 min="0"
                 step="0.01"
               />
+              <!-- Error message for Price if the input is invalid -->
               <div class="invalid-feedback">
                 <div *ngIf="addProductForm.get('price')?.hasError('required')">Price is required</div>
               </div>
             </div>
           </div>
 
-          <!-- Quantity -->
+          <!-- Quantity Input Field -->
           <div class="form-group row mb-3">
             <label for="quantityInput" class="col-sm-4 col-form-label">Quantity</label>
             <div class="col-sm-8">
@@ -56,19 +61,20 @@
                 type="number"
                 class="form-control"
                 placeholder="Enter Quantity"
-                formControlName="quantity"
+                formControlName="quantity" 
                 [ngClass]="{
                   'is-invalid': addProductForm.get('quantity')?.touched && addProductForm.get('quantity')?.invalid
                 }"
                 min="1"
               />
+              <!-- Error message for Quantity if the input is invalid -->
               <div class="invalid-feedback">
                 <div *ngIf="addProductForm.get('quantity')?.hasError('required')">Quantity is required</div>
               </div>
             </div>
           </div>
 
-          <!-- Product Description -->
+          <!-- Product Description Input Field -->
           <div class="form-group row mb-3">
             <label for="descriptionInput" class="col-sm-4 col-form-label">Product Description</label>
             <div class="col-sm-8">
@@ -76,24 +82,25 @@
                 type="text"
                 class="form-control"
                 placeholder="Enter Product Description"
-                formControlName="description"
+                formControlName="description"  
                 [ngClass]="{
                   'is-invalid': addProductForm.get('description')?.touched && addProductForm.get('description')?.invalid
                 }"
               />
+              <!-- Error message for Product Description if the input is invalid -->
               <div class="invalid-feedback">
                 <div *ngIf="addProductForm.get('description')?.hasError('required')">Product Description is required</div>
               </div>
             </div>
           </div>
 
-          <!-- Category -->
+          <!-- Category Selection Dropdown -->
           <div class="form-group row mb-3">
             <label for="categoryInput" class="col-sm-4 col-form-label">Category</label>
             <div class="col-sm-8">
               <select
                 class="form-control"
-                formControlName="category"
+                formControlName="category" 
                 [ngClass]="{
                   'is-invalid': addProductForm.get('category')?.touched && addProductForm.get('category')?.invalid
                 }"
@@ -102,13 +109,14 @@
                 <option value="Half">Half</option>
                 <option value="Full">Full</option>
               </select>
+              <!-- Error message for Category if the input is invalid -->
               <div class="invalid-feedback">
                 <div *ngIf="addProductForm.get('category')?.hasError('required')">Category is required</div>
               </div>
             </div>
           </div>
 
-          <!-- Submit Button -->
+          <!-- Submit Button (Disabled when form is invalid) -->
           <div class="form-group">
             <button type="submit" class="btn btn-primary w-100" [disabled]="addProductForm.invalid">
               Submit
@@ -119,8 +127,10 @@
     </div>
   </div>
 
-  <!-- Success/Error Messages -->
+  <!-- Success/Error Toast Messages -->
   <div class="position-fixed bottom-0 end-0 p-3">
+    
+    <!-- Success Toast (Displays when product is saved successfully) -->
     <div *ngIf="isSaved" 
          class="toast align-items-center text-bg-success border-0 show" 
          style="width: 400px; height: 75px;" 
@@ -131,13 +141,15 @@
         <div class="toast-body" style="font-size: 1.2rem; padding: 1rem;">
           Saved Successfully
         </div>
+        <!-- Close button for the success toast -->
         <button type="button" 
                 class="btn-close btn-close-white me-2 m-auto" 
-                (click)="isSaved = false" 
+                (click)="isSaved = false"
                 aria-label="Close"></button>
       </div>
     </div>
     
+    <!-- Error Toast (Displays when there's an error in saving the product) -->
     <div *ngIf="!isSaved && showError" 
          class="toast align-items-center text-bg-danger border-0 show" 
          style="width: 400px; height: 75px;" 
@@ -148,6 +160,7 @@
         <div class="toast-body" style="font-size: 1.2rem; padding: 1rem;">
           Unable to create product. Some error occurred. Try again later.
         </div>
+        <!-- Close button for the error toast -->
         <button type="button" 
                 class="btn-close btn-close-white me-2 m-auto" 
                 (click)="showError = false" 
