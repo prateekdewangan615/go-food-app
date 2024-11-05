@@ -18,8 +18,15 @@ import { Component } from '@angular/core';
   .card {
       width: 100%;
   }
-  `
+  .card-img-top {
+    height: 200px; /* Set a uniform height for all images */
+    object-fit: cover; /* Ensures the image covers the space without distortion */
+  }
+  .card-body {
+    min-height: 150px; /* Ensure the body has a consistent minimum height */
+    margin-bottom: 20px;
+  }
+  
+  `,
 })
-export class AboutComponent {
-
-}
+export class AboutComponent {}
