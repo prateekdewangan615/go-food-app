@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   template: `
     <section id="product">
       <div class="container-fluid px-0 top-banner">
@@ -68,7 +69,6 @@ export class CartComponent {
     this.CartService.getProducts().subscribe((response: any) => {
       this.products = response;
       console.log(this.products);
-      
     });
   }
 }

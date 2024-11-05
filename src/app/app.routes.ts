@@ -46,5 +46,5 @@ export const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
-  { path: 'cart', component: CartComponent, title: 'Cart'  },
+  { path: 'cart', component: CartComponent, title: 'Cart'  }
 ];
