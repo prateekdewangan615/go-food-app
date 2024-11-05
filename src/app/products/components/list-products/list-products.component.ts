@@ -67,7 +67,7 @@ export class ListProductsComponent implements OnInit {
         this.showToast = true; // Show success toast
 
         // Automatically hide the toast after 3 seconds
-        setTimeout(() => this.showToast = false, 3000);
+        setTimeout(() => this.showToast = false, 5000);
 
         // Optionally, fetch the updated cart data after adding the product
         this.cartService.getProducts().subscribe(cartData => {
