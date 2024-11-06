@@ -18,10 +18,6 @@ export class MenuListComponent {
     { label: 'Home', route: '/' },
     { label: 'Products', route: '/products' },
     { label: 'Cart', route: '/cart' },
-    { label: 'Contact', route: '/contact'},
-    { label: 'About Us', route: '/about' },
-    { label: 'Login', route: '/auth/login'},
-    { label: 'Sign Up', route: '/auth/signup'},
-    { label: 'Logout', route: '/auth/logout'}
+    { label: 'About Us', route: '/about' }
   ];
 }

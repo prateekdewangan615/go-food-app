@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
       <div class="container-fluid px-0 top-banner">
         <div class="container">
           <div class="row">
-            <div class="col-lg-12 col-md-6 text-center mt-3">
+            <div class="col-lg-5 col-md-6">
               <h1>Bring People Together with Great Food</h1>
             </div>
           </div>
@@ -51,7 +51,19 @@ import { RouterModule } from '@angular/router';
       </div>
     </section>
   `,
-  styles: ``,
+  styles: `
+  .top-banner {
+      width: 100%;
+      background: url('bg-1.jpg') center;
+      background-size: cover;
+      padding: 16.875rem 0 9.375rem;
+    }
+    .card-img-top {
+      width: 100%;
+      height: 15vw;
+      object-fit: cover;
+    }  
+  `,
 })
 export class CartComponent {
   products: any[] = [];
@@ -65,4 +77,3 @@ export class CartComponent {
     });
   }
 }
-

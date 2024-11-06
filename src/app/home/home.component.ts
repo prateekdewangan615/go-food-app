@@ -14,8 +14,8 @@ import { RouterModule } from '@angular/router';
           class="d-block mx-auto mb-4"
           src="./assets/GoFood-Logo.jpg"
           alt=""
-          width="100"
-          height="100"
+          width="250"
+          height="250"
         />
         <h1 class="display-5 fw-bold text-body-emphasis">Go Food App</h1>
         <div class="col-lg-6 mx-auto">

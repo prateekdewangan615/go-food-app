@@ -13,7 +13,7 @@ import { CartService } from '../../../services/cart.service';
   styles: `
     .top-banner {
       width: 100%;
-      background: url('./images/bg/bg-1.jpg') center;
+      background: url('./bg-1.jpg') center;
       background-size: cover;
       padding: 16.875rem 0 9.375rem;
     }
@@ -35,7 +35,7 @@ export class ListProductsComponent implements OnInit {
   // Injecting necessary services for product and cart management
   constructor(
     private productService: ProductService,  // Service to manage product data
-    private cartService: CartService         // Service to manage cart data
+    private cartService: CartService,         // Service to manage cart data
   ) {}
 
   // ngOnInit is a lifecycle hook that runs when the component is initialized
