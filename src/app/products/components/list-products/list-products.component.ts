@@ -13,7 +13,7 @@ import { CartService } from '../../../services/cart.service';
   styles: `
     .top-banner {
       width: 100%;
-      background: url('./bg-1.jpg') center;
+      background: url('../../../../assets/bg-1.jpg') center;
       background-size: cover;
       padding: 16.875rem 0 9.375rem;
     }
